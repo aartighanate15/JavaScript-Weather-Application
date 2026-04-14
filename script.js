@@ -8,11 +8,6 @@ const weatherIcon = document.querySelector(".weather-icon");
 async function getWeather(city = "Bangalore") {
   const response = await fetch(`${apiUrl}&q=${encodeURIComponent(city)}&appid=${apiKey}`);
 
-  // if (!response.ok) {
-  //   console.error(`Weather API returned ${response.status}`);
-  //   return;
-  // }else{
-
   if(!response.ok){
     document.querySelector(".err").style.display = "block";
     document.querySelector(".weather").style.display = "none";
